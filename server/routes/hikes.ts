@@ -1,4 +1,5 @@
 import express from 'express'
+import { HikesInterface } from '../../common/Hikes'
 import {
   getAllHikes,
   getIndivudualHike,
@@ -40,20 +41,27 @@ router.get('/:id', (req, res) => {
 })
 
 router.patch('/:id', (req, res) => {
-  const { name, description, max_depth, duration, max_group, time } = req.body
+  const { name, location } = req.body
   const updateData = {
     id: Number(req.params.id),
     name: name,
-    description: description,
-    max_depth: max_depth,
-    duration: duration,
-    max_group: max_group,
-    time: time,
-  } as DivesInterface
+    location: location,
+  } as HikesInterface
 
-  updateDives(updateData)
+  updateHike(updateData)
     .then((update) => {
       res.json(update)
+    })
+    .catch((err: Error) => {
+      res.status(500).send(err.message)
+    })
+})
+
+router.delete('/:id', (req, res) => {
+  const id = Number(req.params.id)
+  deleteHike(id)
+    .then((hike) => {
+      res.json(hike)
     })
     .catch((err: Error) => {
       res.status(500).send(err.message)

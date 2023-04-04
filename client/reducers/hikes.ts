@@ -9,6 +9,7 @@ function subhikes(state = initialState, action: Action): HikesInterface[] {
   switch (type) {
     case SAVE_HIKES:
       return payload
+
     default:
       return state
   }
