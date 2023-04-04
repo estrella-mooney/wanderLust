@@ -1,5 +1,4 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
-
 import { useAppDispatch } from '../hooks/redux'
 import { addHike, thunkAddHike } from '../actions/hikes'
 import { HikesInterface } from '../../common/Hikes'
@@ -10,7 +9,6 @@ function AddHikeForm() {
   const navigate = useNavigate()
 
   const [userHike, setUserHike] = useState({} as HikesInterface)
-  const [hikeFormData, setHikeData] = useState('')
 
   const handleDiveChange = (event: ChangeEvent<HTMLInputElement>) => {
     setUserHike({ ...userHike, [event.target.id]: event.target.value })
@@ -18,11 +16,8 @@ function AddHikeForm() {
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
-    const action = {
-      type: 'ADD_HIKE',
-      payload: hikeFormData,
-    }
-    dispatch(action)
+    dispatch(addHike(userHike))
+    navigate('/hikes')
   }
 
   return (
@@ -30,13 +25,22 @@ function AddHikeForm() {
       <h1>Add Your Own Hike</h1>
       <br></br>
       <label htmlFor="name">Name Of Hike: </label>
-      <input name="name" id="name" onChange={handleDiveChange} required />
+      <input
+        name="name"
+        id="name"
+        type="text"
+        value={userHike.name || ''}
+        onChange={handleDiveChange}
+        required
+      />
       <br></br>
 
       <label htmlFor="location">Location: </label>
       <input
         name="location"
         id="location"
+        type="text"
+        value={userHike.location || ''}
         onChange={handleDiveChange}
         required
       />
