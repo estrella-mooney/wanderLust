@@ -10,16 +10,19 @@ function AddHikeForm() {
   const navigate = useNavigate()
 
   const [userHike, setUserHike] = useState({} as HikesInterface)
+  const [hikeFormData, setHikeData] = useState('')
 
   const handleDiveChange = (event: ChangeEvent<HTMLInputElement>) => {
     setUserHike({ ...userHike, [event.target.id]: event.target.value })
   }
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
-    // const convertDate = new Date(userHike.time).toISOString()
-    // dispatch(thunkAddHike({ ...userHike, time: Number(convertDate) }))
-    navigate('/hikes')
+    const action = {
+      type: 'ADD_HIKE',
+      payload: hikeFormData,
+    }
+    dispatch(action)
   }
 
   return (

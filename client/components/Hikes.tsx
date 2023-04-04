@@ -52,7 +52,7 @@ export function Hikes() {
           {/* <Container /> */}
         </div>
         <AddHikeForm />
-        <Link to="/hikes/add">Add Hike</Link>
+        {/* <Link to="/hikes/add">Add Hike</Link> */}
       </Container>
     </>
   )

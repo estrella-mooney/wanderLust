@@ -11397,6 +11397,7 @@ function AddHikeForm() {
   const dispatch = (0,_hooks_redux__WEBPACK_IMPORTED_MODULE_1__.useAppDispatch)();
   const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
   const [userHike, setUserHike] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({});
+  const [hikeFormData, setHikeData] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
   const handleDiveChange = event => {
     setUserHike({
       ...userHike,
@@ -11405,9 +11406,11 @@ function AddHikeForm() {
   };
   const handleSubmit = event => {
     event.preventDefault();
-    // const convertDate = new Date(userHike.time).toISOString()
-    // dispatch(thunkAddHike({ ...userHike, time: Number(convertDate) }))
-    navigate('/hikes');
+    const action = {
+      type: 'ADD_HIKE',
+      payload: hikeFormData
+    };
+    dispatch(action);
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
     onSubmit: handleSubmit,
@@ -11498,10 +11501,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_hikes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/hikes */ "./client/actions/hikes.ts");
 /* harmony import */ var _hooks_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../hooks/redux */ "./client/hooks/redux.ts");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Container/Container.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var _AddHikeForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AddHikeForm */ "./client/components/AddHikeForm.tsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
 
 
 
@@ -11551,10 +11552,7 @@ function Hikes() {
             })]
           }, hike.id);
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AddHikeForm__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
-        to: "/hikes/add",
-        children: "Add Hike"
-      })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AddHikeForm__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
     })
   });
 }
