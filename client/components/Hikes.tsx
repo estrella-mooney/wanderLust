@@ -30,7 +30,7 @@ export function Hikes() {
   return (
     <>
       <Container maxWidth="sm">
-        <div>
+        <div className="movie">
           <img className="small-img" src="./images/3-min.png" alt="Header" />
           <button className="button" onClick={button}>
             Show Hikes

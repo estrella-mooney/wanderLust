@@ -8,7 +8,9 @@ function App() {
           <h1>My Hikes Collection</h1>
         </Container>
       </header>
-      <Hikes />
+      <div className="movie-container">
+        <Hikes />
+      </div>
       <section className="main">{/* add your code here */}</section>
     </>
   )
