@@ -11,7 +11,9 @@ import {
 
 export const SAVE_HIKES = 'SAVE_HIKES'
 export const SHOW_ERROR = 'SHOW_ERROR'
-export const ADD_HIKES = 'ADD_HIKES'
+export const ADD_HIKE = 'ADD_HIKE'
+export const DEL_HIKE = 'DEL_HIKE'
+export const UPDATE_HIKE = 'UPDATE_HIKE'
 
 export type Action =
   | { type: 'SAVE_HIKES'; payload: HikesInterface[] }
@@ -34,30 +36,30 @@ export function saveHikes(hikes: HikesInterface[]): Action {
   }
 }
 
-export function updateHike(newDive: HikesInterface): Action {
+export function updateHike(newHike: HikesInterface): Action {
   return {
-    type: 'UPDATE_HIKE',
-    payload: newDive,
+    type: UPDATE_HIKE,
+    payload: newHike,
   }
 }
 
-export function addHike(addDive: HikesInterface): Action {
+export function addHike(addHike: HikesInterface): Action {
   return {
-    type: 'ADD_HIKE',
-    payload: addDive,
+    type: ADD_HIKE,
+    payload: addHike,
   }
 }
 
 export function deleteHike(id_to_del: number): Action {
   return {
-    type: 'DEL_HIKE',
+    type: DEL_HIKE,
     payload: id_to_del,
   }
 }
 
 export function showError(errorMessage: string): Action {
   return {
-    type: 'SHOW_ERROR',
+    type: SHOW_ERROR,
     payload: errorMessage,
   }
 }
@@ -70,7 +72,43 @@ export function fetchHikes(): ThunkAction {
         dispatch(saveHikes(hikes))
       })
       .catch((err) => {
-        dispatch(showError(err.message))
+        console.log('fetchHike Thunk', err.message)
+      })
+  }
+}
+
+export function thunkAddHike(hike: HikesInterface): ThunkAction {
+  return (dispatch) => {
+    return addNewHike(hike)
+      .then((hike) => {
+        dispatch(addHike(hike))
+      })
+      .catch((err) => {
+        console.log('Thunk add hike', err.message)
+      })
+  }
+}
+
+export function thunkDelHike(hike_id: number): ThunkAction {
+  return (dispatch) => {
+    return deleteHikeApi(hike_id)
+      .then(() => {
+        dispatch(deleteHike(hike_id))
+      })
+      .catch((err) => {
+        console.log('Thunk Delete Hike', err.message)
+      })
+  }
+}
+
+export function thunkUpdateDive(hike: HikesInterface): ThunkAction {
+  return (dispatch) => {
+    return updateHikeApi(hike)
+      .then((hike) => {
+        dispatch(updateHike(hike))
+      })
+      .catch((err) => {
+        console.log('Thunk Update Hike', err.message)
       })
   }
 }

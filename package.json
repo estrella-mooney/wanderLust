@@ -92,6 +92,7 @@
     "@mui/material": "^5.11.15",
     "@mui/styled-engine-sc": "^5.11.11",
     "@redux-devtools/extension": "^3.2.3",
+    "error": "^10.4.0",
     "express": "^4.17.2",
     "knex": "^2.3.0",
     "pg": "^8.8.0",

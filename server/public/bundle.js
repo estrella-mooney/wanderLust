@@ -11233,18 +11233,28 @@ function getTargetMatch(matches, location) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ADD_HIKES": () => (/* binding */ ADD_HIKES),
+/* harmony export */   "ADD_HIKE": () => (/* binding */ ADD_HIKE),
+/* harmony export */   "DEL_HIKE": () => (/* binding */ DEL_HIKE),
 /* harmony export */   "SAVE_HIKES": () => (/* binding */ SAVE_HIKES),
 /* harmony export */   "SHOW_ERROR": () => (/* binding */ SHOW_ERROR),
+/* harmony export */   "UPDATE_HIKE": () => (/* binding */ UPDATE_HIKE),
+/* harmony export */   "addHike": () => (/* binding */ addHike),
+/* harmony export */   "deleteHike": () => (/* binding */ deleteHike),
 /* harmony export */   "fetchHikes": () => (/* binding */ fetchHikes),
 /* harmony export */   "saveHikes": () => (/* binding */ saveHikes),
-/* harmony export */   "showError": () => (/* binding */ showError)
+/* harmony export */   "showError": () => (/* binding */ showError),
+/* harmony export */   "thunkAddHike": () => (/* binding */ thunkAddHike),
+/* harmony export */   "thunkDelHike": () => (/* binding */ thunkDelHike),
+/* harmony export */   "thunkUpdateDive": () => (/* binding */ thunkUpdateDive),
+/* harmony export */   "updateHike": () => (/* binding */ updateHike)
 /* harmony export */ });
 /* harmony import */ var _apis_apiClient__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../apis/apiClient */ "./client/apis/apiClient.ts");
 
 const SAVE_HIKES = 'SAVE_HIKES';
 const SHOW_ERROR = 'SHOW_ERROR';
-const ADD_HIKES = 'ADD_HIKES';
+const ADD_HIKE = 'ADD_HIKE';
+const DEL_HIKE = 'DEL_HIKE';
+const UPDATE_HIKE = 'UPDATE_HIKE';
 // export function requestHikes(): Action {
 //   return {
 //     type: REQUEST_HIKES,
@@ -11256,6 +11266,24 @@ function saveHikes(hikes) {
   return {
     type: SAVE_HIKES,
     payload: hikes
+  };
+}
+function updateHike(newHike) {
+  return {
+    type: UPDATE_HIKE,
+    payload: newHike
+  };
+}
+function addHike(addHike) {
+  return {
+    type: ADD_HIKE,
+    payload: addHike
+  };
+}
+function deleteHike(id_to_del) {
+  return {
+    type: DEL_HIKE,
+    payload: id_to_del
   };
 }
 function showError(errorMessage) {
@@ -11270,7 +11298,34 @@ function fetchHikes() {
       console.log(hikes, 'Testing yayaaa');
       dispatch(saveHikes(hikes));
     }).catch(err => {
-      dispatch(showError(err.message));
+      console.log('fetchHike Thunk', err.message);
+    });
+  };
+}
+function thunkAddHike(hike) {
+  return dispatch => {
+    return (0,_apis_apiClient__WEBPACK_IMPORTED_MODULE_0__.addNewHike)(hike).then(hike => {
+      dispatch(addHike(hike));
+    }).catch(err => {
+      console.log('Thunk add hike', err.message);
+    });
+  };
+}
+function thunkDelHike(hike_id) {
+  return dispatch => {
+    return (0,_apis_apiClient__WEBPACK_IMPORTED_MODULE_0__.deleteHikeApi)(hike_id).then(() => {
+      dispatch(deleteHike(hike_id));
+    }).catch(err => {
+      console.log('Thunk Delete Hike', err.message);
+    });
+  };
+}
+function thunkUpdateDive(hike) {
+  return dispatch => {
+    return (0,_apis_apiClient__WEBPACK_IMPORTED_MODULE_0__.updateHikeApi)(hike).then(hike => {
+      dispatch(updateHike(hike));
+    }).catch(err => {
+      console.log('Thunk Update Hike', err.message);
     });
   };
 }
@@ -11286,7 +11341,11 @@ function fetchHikes() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getAllHikes": () => (/* binding */ getAllHikes)
+/* harmony export */   "addNewHike": () => (/* binding */ addNewHike),
+/* harmony export */   "deleteHikeApi": () => (/* binding */ deleteHikeApi),
+/* harmony export */   "getAllHikes": () => (/* binding */ getAllHikes),
+/* harmony export */   "getIndivudualHikes": () => (/* binding */ getIndivudualHikes),
+/* harmony export */   "updateHikeApi": () => (/* binding */ updateHikeApi)
 /* harmony export */ });
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! superagent */ "./node_modules/superagent/lib/client.js");
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(superagent__WEBPACK_IMPORTED_MODULE_0__);
@@ -11294,6 +11353,22 @@ __webpack_require__.r(__webpack_exports__);
 function getAllHikes() {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default().get('/api/v1/hikes').then(i => i.body);
 }
+function addNewHike(newHike) {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default().post('/api/v1/hikes').send(newHike).then(res => {
+    return res.body;
+  });
+}
+function updateHikeApi(hike) {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default().patch(`/api/v1/hikes/${hike.id}`).send(hike).then(res => {
+    return res.body;
+  });
+}
+function deleteHikeApi(hikeId) {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default().del(`/api/v1/hikes/${hikeId}`).then(res => res.body);
+}
+function getIndivudualHikes(hikeId) {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default().get(`/api/v1/hikes/${hikeId}`).then(res => res.body);
+} //Don't need this as we are using redux to store the local copy of our db
 
 /***/ }),
 
@@ -11457,6 +11532,12 @@ function subhikes() {
   switch (type) {
     case _actions_hikes__WEBPACK_IMPORTED_MODULE_0__.SAVE_HIKES:
       return payload;
+    case _actions_hikes__WEBPACK_IMPORTED_MODULE_0__.UPDATE_HIKE:
+      return state.map(hike => hike.id === payload.id ? payload : hike);
+    case _actions_hikes__WEBPACK_IMPORTED_MODULE_0__.ADD_HIKE:
+      return [...state, payload];
+    case _actions_hikes__WEBPACK_IMPORTED_MODULE_0__.DEL_HIKE:
+      return state.filter(hike => hike.id !== payload);
     default:
       return state;
   }
