@@ -10,14 +10,16 @@ function AddHikeForm() {
 
   const [userHike, setUserHike] = useState({} as HikesInterface)
 
-  const handleDiveChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setUserHike({ ...userHike, [event.target.id]: event.target.value })
   }
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
     dispatch(thunkAddHike(userHike))
-  } //This will store what user added in the redux store.
+  }
+
+  //This will store what user added in the redux store.
 
   // const handleSubmit = (event: FormEvent) => {
   //   event.preventDefault()
@@ -35,7 +37,7 @@ function AddHikeForm() {
         id="name"
         type="text"
         value={userHike.name || ''}
-        onChange={handleDiveChange}
+        onChange={handleChange}
         required
       />
       <br></br>
@@ -46,7 +48,7 @@ function AddHikeForm() {
         id="location"
         type="text"
         value={userHike.location || ''}
-        onChange={handleDiveChange}
+        onChange={handleChange}
         required
       />
       <br></br>

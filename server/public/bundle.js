@@ -11399,7 +11399,7 @@ function AddHikeForm() {
   const dispatch = (0,_hooks_redux__WEBPACK_IMPORTED_MODULE_1__.useAppDispatch)();
   const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
   const [userHike, setUserHike] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({});
-  const handleDiveChange = event => {
+  const handleChange = event => {
     setUserHike({
       ...userHike,
       [event.target.id]: event.target.value
@@ -11408,7 +11408,9 @@ function AddHikeForm() {
   const handleSubmit = event => {
     event.preventDefault();
     dispatch((0,_actions_hikes__WEBPACK_IMPORTED_MODULE_2__.thunkAddHike)(userHike));
-  }; //This will store what user added in the redux store.
+  };
+
+  //This will store what user added in the redux store.
 
   // const handleSubmit = (event: FormEvent) => {
   //   event.preventDefault()
@@ -11428,7 +11430,7 @@ function AddHikeForm() {
       id: "name",
       type: "text",
       value: userHike.name || '',
-      onChange: handleDiveChange,
+      onChange: handleChange,
       required: true
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
       htmlFor: "location",
@@ -11438,7 +11440,7 @@ function AddHikeForm() {
       id: "location",
       type: "text",
       value: userHike.location || '',
-      onChange: handleDiveChange,
+      onChange: handleChange,
       required: true
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
       className: "hikes_button",
