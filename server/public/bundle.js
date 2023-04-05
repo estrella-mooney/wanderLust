@@ -11407,9 +11407,15 @@ function AddHikeForm() {
   };
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch((0,_actions_hikes__WEBPACK_IMPORTED_MODULE_2__.addHike)(userHike));
-    navigate('/hikes');
-  };
+    dispatch((0,_actions_hikes__WEBPACK_IMPORTED_MODULE_2__.thunkAddHike)(userHike));
+  }; //This will store what user added in the redux store.
+
+  // const handleSubmit = (event: FormEvent) => {
+  //   event.preventDefault()
+  //   dispatch(addHike(userHike))
+  //   navigate('/')
+  // }
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
     onSubmit: handleSubmit,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {

@@ -16,9 +16,14 @@ function AddHikeForm() {
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
-    dispatch(addHike(userHike))
-    navigate('/hikes')
-  }
+    dispatch(thunkAddHike(userHike))
+  } //This will store what user added in the redux store.
+
+  // const handleSubmit = (event: FormEvent) => {
+  //   event.preventDefault()
+  //   dispatch(addHike(userHike))
+  //   navigate('/')
+  // }
 
   return (
     <form onSubmit={handleSubmit}>
