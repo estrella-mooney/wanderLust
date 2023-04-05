@@ -11408,6 +11408,7 @@ function AddHikeForm() {
   const handleSubmit = event => {
     event.preventDefault();
     dispatch((0,_actions_hikes__WEBPACK_IMPORTED_MODULE_2__.thunkAddHike)(userHike));
+    // setUserHike({ name: '', location: '' } as HikesInterface)
   };
 
   //This will store what user added in the redux store.
