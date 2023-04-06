@@ -1,49 +1,100 @@
 /*!*******************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./client/styles/index.scss ***!
   \*******************************************************************************************************************/
-.movie {
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  margin-top: 50px;
 }
-.movie .small-img {
-  width: 100%;
-  max-width: 300px;
-  margin-bottom: 1rem;
+form h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
 }
-.movie .button {
-  padding: 0.5rem 1rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.movie .button:hover {
-  background-color: #0062cc;
-}
-.movie > div {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.movie > div p {
-  margin: 0;
+form label {
   font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+form input {
+  padding: 8px;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+form input:focus {
+  outline: none;
+  border-color: #6bcbef;
+}
+form .hikes_button {
+  background-color: #6befa2;
+  color: white;
+  font-size: 1.2rem;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+form .hikes_button:hover {
+  background-color: #2ea546;
 }
 
-.container {
+.movie {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
+  margin: 20px;
 }
-.container > * {
-  width: 100%;
-  max-width: 600px;
+.movie .small-img {
+  max-width: 100%;
+  height: auto;
+}
+.movie .button {
+  padding: 10px;
+  background-color: #c6f2ca;
+  color: rgb(245, 43, 144);
+  font-weight: 600;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: rgb(245, 43, 144);
+  border-radius: 20px;
+  text-decoration: none;
+  box-shadow: rgb(243, 121, 182) 0px 3px 8px;
+  margin: 10px;
+}
+.movie .hike-section {
+  background-color: #c6f2ca;
+  color: rgb(245, 43, 144);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: rgb(243, 121, 182) 0px 3px 8px;
+  flex-basis: 30%;
+}
+
+@media screen and (max-width: 768px) {
+  .movie .hike-section {
+    flex-basis: 45%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .movie .hike-section {
+    flex-basis: 100%;
+  }
+}
+body {
+  background: #f3e5dc;
+  color: rgb(245, 43, 144);
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 20px;
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /*# sourceMappingURL=styles.css.map*/

@@ -11465,9 +11465,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Hikes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Hikes */ "./client/components/Hikes.tsx");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Container/Container.js");
+/* harmony import */ var _Hikes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Hikes */ "./client/components/Hikes.tsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+// import Hikes from './Hikes'
 
 
 
@@ -11515,6 +11516,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// import './Hikes.scss'
+
 
 
 
@@ -11557,6 +11560,7 @@ function Hikes() {
           children: showHikes ? 'Hide Hikes' : 'Show Hikes'
         }), showHikes && data && data?.map(hike => {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "hike-section",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
               children: hike.name
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {

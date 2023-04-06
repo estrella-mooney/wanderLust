@@ -1,6 +1,6 @@
-import Hikes from './Hikes'
+// import Hikes from './Hikes'
 import { Container } from '@mui/material'
-import TestHikes from './Home'
+import Hikes from './Hikes'
 function App() {
   return (
     <>

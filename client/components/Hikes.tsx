@@ -5,6 +5,7 @@ import { fetchHikes } from '../actions/hikes'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import { Container, ThemeProvider } from '@mui/material'
 import { Link } from 'react-router-dom'
+// import './Hikes.scss'
 
 import AddHikeForm from './AddHikeForm'
 
@@ -49,7 +50,7 @@ export function Hikes() {
             data &&
             data?.map((hike) => {
               return (
-                <div key={hike.id}>
+                <div key={hike.id} className="hike-section">
                   <p>{hike.name}</p>
                   <p>{hike.location}</p>
                 </div>
