@@ -5,7 +5,6 @@ import { fetchHikes, thunkDelHike } from '../actions/hikes'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import { Container, ThemeProvider } from '@mui/material'
 import { Link } from 'react-router-dom'
-// import './Hikes.scss'
 
 import AddHikeForm from './AddHikeForm'
 
@@ -35,10 +34,9 @@ export function Hikes() {
       dispatch(fetchHikes())
     }
   }
-  const handleDeleteHike = (hikeId: number) => {
-    dispatch(thunkDelHike(hikeId))
+  const handleDelete = (id: number) => {
+    dispatch(thunkDelHike(id)) //dispatch the thunkDelHike function with the hike id to delete the hike
   }
-
   return (
     <>
       <Container maxWidth="sm">
@@ -56,9 +54,12 @@ export function Hikes() {
                 <div key={hike.id} className="hike-section">
                   <p>{hike.name}</p>
                   <p>{hike.location}</p>
-                  <button onClick={() => handleDeleteHike(hike.id)}>
-                    Delete
-                  </button>
+                  <button
+                    className="button"
+                    onClick={() => handleDelete(hike.id)}
+                  >
+                    Delete Hike
+                  </button>{' '}
                 </div>
               )
             })}

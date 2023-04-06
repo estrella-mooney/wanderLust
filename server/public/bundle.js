@@ -11516,8 +11516,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import './Hikes.scss'
-
 
 
 
@@ -11545,9 +11543,10 @@ function Hikes() {
       dispatch((0,_actions_hikes__WEBPACK_IMPORTED_MODULE_1__.fetchHikes)());
     }
   };
-  const handleDeleteHike = hikeId => {
-    dispatch((0,_actions_hikes__WEBPACK_IMPORTED_MODULE_1__.thunkDelHike)(hikeId));
+  const handleDelete = id => {
+    dispatch((0,_actions_hikes__WEBPACK_IMPORTED_MODULE_1__.thunkDelHike)(id)); //dispatch the thunkDelHike function with the hike id to delete the hike
   };
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], {
       maxWidth: "sm",
@@ -11569,9 +11568,10 @@ function Hikes() {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
               children: hike.location
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-              onClick: () => handleDeleteHike(hike.id),
-              children: "Delete"
-            })]
+              className: "button",
+              onClick: () => handleDelete(hike.id),
+              children: "Delete Hike"
+            }), ' ']
           }, hike.id);
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AddHikeForm__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
