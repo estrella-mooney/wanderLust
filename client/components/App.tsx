@@ -1,13 +1,14 @@
 import Hikes from './Hikes'
 import { Container } from '@mui/material'
+import TestHikes from './Home'
 function App() {
   return (
     <>
-      <header className="header-text">
-        <Container maxWidth="sm">
-          <h1>My Hikes Collection</h1>
-        </Container>
-      </header>
+      {/* <header className="header-text"> */}
+      <Container maxWidth="sm">
+        <h1>My Hikes Collection</h1>
+      </Container>
+      {/* </header> */}
       <div className="movie-container">
         <Hikes />
       </div>

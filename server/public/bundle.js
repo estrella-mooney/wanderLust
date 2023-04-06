@@ -11475,13 +11475,10 @@ __webpack_require__.r(__webpack_exports__);
 
 function App() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("header", {
-      className: "header-text",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        maxWidth: "sm",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
-          children: "My Hikes Collection"
-        })
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      maxWidth: "sm",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+        children: "My Hikes Collection"
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "movie-container",
@@ -11524,6 +11521,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function Hikes() {
   const [hikes, setHikes] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const [showHikes, setShowHikes] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const dispatch = (0,_hooks_redux__WEBPACK_IMPORTED_MODULE_2__.useAppDispatch)();
   const data = (0,_hooks_redux__WEBPACK_IMPORTED_MODULE_2__.useAppSelector)(globalState => globalState.hikes);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
@@ -11539,7 +11537,10 @@ function Hikes() {
     //     .catch((err) => console.log(err.message))
   }, []);
   const button = () => {
-    dispatch((0,_actions_hikes__WEBPACK_IMPORTED_MODULE_1__.fetchHikes)());
+    setShowHikes(!showHikes);
+    if (!showHikes) {
+      dispatch((0,_actions_hikes__WEBPACK_IMPORTED_MODULE_1__.fetchHikes)());
+    }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -11553,8 +11554,8 @@ function Hikes() {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
           className: "button",
           onClick: button,
-          children: "Show Hikes"
-        }), data && data?.map(hike => {
+          children: showHikes ? 'Hide Hikes' : 'Show Hikes'
+        }), showHikes && data && data?.map(hike => {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
               children: hike.name
