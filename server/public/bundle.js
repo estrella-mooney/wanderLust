@@ -11245,7 +11245,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "showError": () => (/* binding */ showError),
 /* harmony export */   "thunkAddHike": () => (/* binding */ thunkAddHike),
 /* harmony export */   "thunkDelHike": () => (/* binding */ thunkDelHike),
-/* harmony export */   "thunkUpdateDive": () => (/* binding */ thunkUpdateDive),
+/* harmony export */   "thunkUpdateHike": () => (/* binding */ thunkUpdateHike),
 /* harmony export */   "updateHike": () => (/* binding */ updateHike)
 /* harmony export */ });
 /* harmony import */ var _apis_apiClient__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../apis/apiClient */ "./client/apis/apiClient.ts");
@@ -11320,10 +11320,11 @@ function thunkDelHike(hike_id) {
     });
   };
 }
-function thunkUpdateDive(hike) {
+function thunkUpdateHike(hike) {
   return dispatch => {
     return (0,_apis_apiClient__WEBPACK_IMPORTED_MODULE_0__.updateHikeApi)(hike).then(hike => {
       dispatch(updateHike(hike));
+      return hike;
     }).catch(err => {
       console.log('Thunk Update Hike', err.message);
     });
@@ -11395,6 +11396,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function AddHikeForm() {
   const dispatch = (0,_hooks_redux__WEBPACK_IMPORTED_MODULE_1__.useAppDispatch)();
   const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
@@ -11419,35 +11421,40 @@ function AddHikeForm() {
   //   navigate('/')
   // }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
-    onSubmit: handleSubmit,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
-      children: "Add Your Own Hike"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-      htmlFor: "name",
-      children: "Name Of Hike: "
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-      name: "name",
-      id: "name",
-      type: "text",
-      value: userHike.name || '',
-      onChange: handleChange,
-      required: true
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-      htmlFor: "location",
-      children: "Location: "
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-      name: "location",
-      id: "location",
-      type: "text",
-      value: userHike.location || '',
-      onChange: handleChange,
-      required: true
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-      className: "hikes_button",
-      type: "submit",
-      children: "Sumbit your hike"
-    })]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "formContainer",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
+        onSubmit: handleSubmit,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+          children: "Add Your Own Hike"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          htmlFor: "name",
+          children: "Name Of Hike: "
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+          name: "name",
+          id: "name",
+          type: "text",
+          value: userHike.name || '',
+          onChange: handleChange,
+          required: true
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          htmlFor: "location",
+          children: "Location: "
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+          name: "location",
+          id: "location",
+          type: "text",
+          value: userHike.location || '',
+          onChange: handleChange,
+          required: true
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          className: "hikes_button",
+          type: "submit",
+          children: "Sumbit your hike"
+        })]
+      })
+    })
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AddHikeForm);

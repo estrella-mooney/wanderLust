@@ -101,11 +101,12 @@ export function thunkDelHike(hike_id: number): ThunkAction {
   }
 }
 
-export function thunkUpdateDive(hike: HikesInterface): ThunkAction {
+export function thunkUpdateHike(hike: HikesInterface): ThunkAction {
   return (dispatch) => {
     return updateHikeApi(hike)
       .then((hike) => {
         dispatch(updateHike(hike))
+        return hike
       })
       .catch((err) => {
         console.log('Thunk Update Hike', err.message)

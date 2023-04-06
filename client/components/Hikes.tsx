@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { HikesInterface } from '../../common/Hikes'
 import { getAllHikes } from '../apis/apiClient'
-import { fetchHikes, thunkDelHike } from '../actions/hikes'
+import { fetchHikes, thunkDelHike, thunkUpdateHike } from '../actions/hikes'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import { Container, ThemeProvider } from '@mui/material'
 import { Link } from 'react-router-dom'
@@ -37,6 +37,7 @@ export function Hikes() {
   const handleDelete = (id: number) => {
     dispatch(thunkDelHike(id)) //dispatch the thunkDelHike function with the hike id to delete the hike
   }
+
   return (
     <>
       <Container maxWidth="sm">

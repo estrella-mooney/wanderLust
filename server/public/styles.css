@@ -6,6 +6,9 @@ form {
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+  background-color: #3cb454;
+  padding: 20px;
+  border-radius: 10px;
 }
 form h1 {
   font-size: 2rem;
