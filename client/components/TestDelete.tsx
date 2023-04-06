@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import { HikesInterface } from '../../common/Hikes'
-import { getAllHikes } from '../apis/apiClient'
-import { fetchHikes, thunkDelHike } from '../actions/hikes'
+import { getAllHikes, deleteHikeApi } from '../apis/apiClient' //import the deleteHikeApi function
+import { fetchHikes, deleteHike } from '../actions/hikes'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import { Container, ThemeProvider } from '@mui/material'
 import { Link } from 'react-router-dom'
-// import './Hikes.scss'
+import { thunkDelHike } from '../actions/hikes'
 
 import AddHikeForm from './AddHikeForm'
 
@@ -17,16 +17,14 @@ export function Hikes() {
   const data = useAppSelector((globalState) => globalState.hikes)
 
   useEffect(() => {
-    // Make a varible for being able to use the useAppSelector from the store
     // dispatch(
     //   fetchHikes()
-    //   // Make button
     // )
-    //   getAllHikes() //Set local State
-    //     .then((hikesArr) => {
-    //       setHikes(hikesArr)
-    //     })
-    //     .catch((err) => console.log(err.message))
+    getAllHikes()
+      .then((hikesArr) => {
+        setHikes(hikesArr)
+      })
+      .catch((err) => console.log(err.message))
   }, [])
 
   const button = () => {
@@ -35,8 +33,9 @@ export function Hikes() {
       dispatch(fetchHikes())
     }
   }
-  const handleDeleteHike = (hikeId: number) => {
-    dispatch(thunkDelHike(hikeId))
+
+  const handleDelete = (id: number) => {
+    dispatch(thunkDelHike(id)) //dispatch the thunkDelHike function with the hike id to delete the hike
   }
 
   return (
@@ -47,8 +46,6 @@ export function Hikes() {
           <button className="button" onClick={button}>
             {showHikes ? 'Hide Hikes' : 'Show Hikes'}
           </button>
-          {/* Button (onClick) dispatch*/}
-          {/* Get info from stroe, load on page */}
           {showHikes &&
             data &&
             data?.map((hike) => {
@@ -56,16 +53,16 @@ export function Hikes() {
                 <div key={hike.id} className="hike-section">
                   <p>{hike.name}</p>
                   <p>{hike.location}</p>
-                  <button onClick={() => handleDeleteHike(hike.id)}>
-                    Delete
-                  </button>
+                  <button onClick={() => handleDelete(hike.id)}>
+                    Delete Hike
+                  </button>{' '}
+                  {/* add a delete button that calls handleDelete function */}
                 </div>
               )
             })}
-          {/* <Container /> */}
         </div>
         <AddHikeForm />
-        {/* <Link to="/hikes/add">Add Hike</Link> */}
+        {/* <Link to='/hikes/add'>Add Hike</Link> */}
       </Container>
     </>
   )

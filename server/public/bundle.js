@@ -11545,6 +11545,9 @@ function Hikes() {
       dispatch((0,_actions_hikes__WEBPACK_IMPORTED_MODULE_1__.fetchHikes)());
     }
   };
+  const handleDeleteHike = hikeId => {
+    dispatch((0,_actions_hikes__WEBPACK_IMPORTED_MODULE_1__.thunkDelHike)(hikeId));
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], {
       maxWidth: "sm",
@@ -11565,6 +11568,9 @@ function Hikes() {
               children: hike.name
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
               children: hike.location
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+              onClick: () => handleDeleteHike(hike.id),
+              children: "Delete"
             })]
           }, hike.id);
         })]
