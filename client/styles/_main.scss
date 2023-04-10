@@ -4,20 +4,36 @@ body {
   top: 0;
   left: 0;
   margin: 0;
+  // padding: 20px;
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #c6e7f2;
+
+}
+
+full-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
   padding: 20px;
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
+// .hero-img {
+//   height: auto;
+//   max-width: 100%;
+// }
 
 .hero-img {
+  width: 100%;
   height: auto;
-  max-width: 100%;
+  object-fit: cover;
 }
 
 
-html {
-  background-color: #b38db8;
-}
+
+// html {
+//   background-color: #b38db8;
+// }
 
 
 .add {
@@ -52,7 +68,11 @@ html {
   }
 
 
+  .app-container{
+    margin-top: 65px;
+  }
 
+  
 
 
 

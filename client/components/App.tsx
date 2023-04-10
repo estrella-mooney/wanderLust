@@ -9,7 +9,6 @@ function App() {
 
       {/* <Container maxWidth="sm"> */}
       <Nav />
-      <h1>My Hikes Collection</h1>
 
       {/* </header> */}
       <div className="movie-container">

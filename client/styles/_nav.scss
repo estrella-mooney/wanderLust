@@ -1,70 +1,61 @@
-// .nav {
-//   font-family: sans-serif;
-//   text-align: center;
-// }
 
-// section {
-//   // display: grid;
-//   place-items: center;
-//   height: 100vh;
-//   font-size: 32px;
-//   font-weight: bold;
-// }
+.nav-bar {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  // position: sticky;
+  top: -5px;
+  left: 0px;
+  z-index: 2;
+  height: 70px;
+  min-height: 70px;
+  width: calc(100% - 1.5rem);
+  background-color: #fff;
+  padding: 0 1rem;
+  box-shadow: 0 0.125rem 0.25rem 0 rgb(0 0 0 / 11%);
+  font-family: sans-serif;
+  text-align: center;
+}
 
-// // #home {
-// //   margin-top: 80px;
-// // }
+.nav__container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
 
 
+ul {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  list-style: none;
+  padding: 0;
+}
 
-// .nav {
-//   display: flex;
-//   align-items: center;
-//   position: -webkit-sticky;
-//   position: sticky;
-//   top: -5px;
-//   z-index: 2;
-//   height: 70px;
-//   min-height: 70px;
-//   width: calc(100% - 1.5rem);
-//   background-color: #fff;
-//   padding: 0 1rem;
-//   box-shadow: 0 0.125rem 0.25rem 0 rgb(0 0 0 / 11%);
-// }
+ul li a {
+  color: #555;
+  font-weight: 500;
+  // text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.05s ease-in-out;
+  text-decoration: none;
+}
 
-// .nav__container {
-//   display: flex;
-//   flex-flow: row nowrap;
-//   align-items: center;
-//   justify-content: space-between;
-//   width: 100%;
-//   height: 100%;
-//   margin: 0 auto;
-//   position: relative;
-// }
+ul li a:hover {
+  color: #994bad;
+}
 
-// .nav__container__actions {
-//   display: inline-flex;
-//   flex-flow: row nowrap;
-//   padding-left: 50px;
-//   flex: 1;
-// }
 
-// .active {
-//   font-weight: bold;
-// }
-
-// ul {
-//   display: flex;
-//   gap: 1rem;
-//   font-size: 0.9rem;
-//   list-style: none;
-//   padding: 0;
-// }
-
-// li {
-//   cursor: pointer;
-// }
+li {
+  cursor: pointer;
+}
 
 // li:hover {
 //   text-decoration: underline;

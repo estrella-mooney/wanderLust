@@ -30,44 +30,46 @@ function AddHikeForm() {
 
   return (
     <>
-      <div className="formContainer">
-        <form onSubmit={handleSubmit}>
-          <h1>Add Your Own Hike</h1>
-          <br></br>
-          <label htmlFor="name">Name Of Hike: </label>
-          <input
-            name="name"
-            id="name"
-            type="text"
-            value={userHike.name || ''}
-            onChange={handleChange}
-            required
-          />
-          <br></br>
+      <div className="full-body">
+        <div className="formContainer">
+          <form onSubmit={handleSubmit}>
+            <h1>Add Your Own Hike</h1>
+            <br></br>
+            <label htmlFor="name">Name Of Hike: </label>
+            <input
+              name="name"
+              id="name"
+              type="text"
+              value={userHike.name || ''}
+              onChange={handleChange}
+              required
+            />
+            <br></br>
 
-          <label htmlFor="location">Location: </label>
-          <input
-            name="location"
-            id="location"
-            type="text"
-            value={userHike.location || ''}
-            onChange={handleChange}
-            required
-          />
-          <br></br>
-          <label htmlFor="location">Add image: </label>
-          <input
-            name="image"
-            id="image"
-            type="file"
-            // value={userHike.location || ''}
-            onChange={handleChange}
-            required
-          />
-          <button className="hikes_button" type="submit">
-            Sumbit your hike
-          </button>
-        </form>
+            <label htmlFor="location">Location: </label>
+            <input
+              name="location"
+              id="location"
+              type="text"
+              value={userHike.location || ''}
+              onChange={handleChange}
+              required
+            />
+            <br></br>
+            <label htmlFor="location">Add image: </label>
+            <input
+              name="image"
+              id="image"
+              type="file"
+              // value={userHike.location || ''}
+              onChange={handleChange}
+              required
+            />
+            <button className="hikes_button" type="submit">
+              Sumbit your hike
+            </button>
+          </form>
+        </div>
       </div>
     </>
   )

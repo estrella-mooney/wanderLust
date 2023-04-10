@@ -95,6 +95,8 @@
     "@emotion/styled": "^11.10.6",
     "@mui/material": "^5.11.15",
     "@mui/styled-engine-sc": "^5.11.11",
+    "@react-spring/parallax": "^9.7.2",
+    "@react-spring/web": "^9.7.2",
     "@redux-devtools/extension": "^3.2.3",
     "dokku": "^0.1.2",
     "error": "^10.4.0",
