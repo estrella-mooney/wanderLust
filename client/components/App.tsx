@@ -3,6 +3,7 @@ import { Container } from '@mui/material'
 import Hikes from './Hikes'
 import Nav from './Nav'
 import ParallaxHero from './HeroOne'
+
 function App() {
   return (
     <>
