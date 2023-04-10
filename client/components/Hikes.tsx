@@ -50,7 +50,7 @@ export function Hikes() {
         <div className="hero">
           <img className="hero-img" src="./images/mountain.jpg" alt="Header" />
         </div>
-        <div className="">
+        <div className="test">
           <button className="button" onClick={button}>
             {showHikes ? 'Hide Hikes' : 'Show Hikes'}
           </button>
