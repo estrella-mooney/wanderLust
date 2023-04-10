@@ -55,6 +55,15 @@ function AddHikeForm() {
             required
           />
           <br></br>
+          <label htmlFor="location">Add image: </label>
+          <input
+            name="image"
+            id="image"
+            type="file"
+            // value={userHike.location || ''}
+            onChange={handleChange}
+            required
+          />
           <button className="hikes_button" type="submit">
             Sumbit your hike
           </button>

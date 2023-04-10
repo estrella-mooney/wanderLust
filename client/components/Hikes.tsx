@@ -40,35 +40,29 @@ export function Hikes() {
 
   return (
     <>
-      <Container maxWidth="sm">
-        <div className="movie">
-          <img className="small-img" src="./images/3-min.png" alt="Header" />
-          <button className="button" onClick={button}>
-            {showHikes ? 'Hide Hikes' : 'Show Hikes'}
-          </button>
-          {/* Button (onClick) dispatch*/}
-          {/* Get info from stroe, load on page */}
-          {showHikes &&
-            data &&
-            data?.map((hike) => {
-              return (
-                <div key={hike.id} className="hike-section">
-                  <p>{hike.name}</p>
-                  <p>{hike.location}</p>
-                  <button
-                    className="button"
-                    onClick={() => handleDelete(hike.id)}
-                  >
-                    Delete Hike
-                  </button>{' '}
-                </div>
-              )
-            })}
-          {/* <Container /> */}
-        </div>
-        <AddHikeForm />
-        {/* <Link to="/hikes/add">Add Hike</Link> */}
-      </Container>
+      {/* <Container maxWidth="sm"> */}
+      {/* <div className="movie"> */}
+      <img className="hero-img" src="./images/3-min.png" alt="Header" />
+      <button className="button" onClick={button}>
+        {showHikes ? 'Hide Hikes' : 'Show Hikes'}
+      </button>
+      {showHikes &&
+        data &&
+        data?.map((hike) => {
+          return (
+            <div key={hike.id} className="hike-section">
+              <p>{hike.name}</p>
+              <p>{hike.location}</p>
+              <button className="button" onClick={() => handleDelete(hike.id)}>
+                Delete Hike
+              </button>{' '}
+            </div>
+          )
+        })}
+      {/* <Container /> */}
+      {/* </div> */}
+      <AddHikeForm />
+      {/* </Container> */}
     </>
   )
 }
