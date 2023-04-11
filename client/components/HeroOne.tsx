@@ -5,8 +5,6 @@ export default function ParallaxHero() {
     <div className="page">
       <section className="hero-image">
         <div className="container">
-          <h1>SVG Animated Birds</h1>
-
           <div className="bird-container bird-container--one">
             <div className="bird bird--one"></div>
           </div>
@@ -27,7 +25,7 @@ export default function ParallaxHero() {
       </section>
       <div className="hero-text-container">
         <div className="hero-title">
-          <h1>Hiking 101</h1>
+          <h1>WanderLust</h1>
         </div>
       </div>
       <section className="main">

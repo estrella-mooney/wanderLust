@@ -6,12 +6,12 @@ $bg-main: #f3e5dc;
 $bg-secondary: #c6e7f2;
 $bg-third: #92c3d3;
 
-$text-color: rgb(184, 43, 245);
+$text-color: rgb(69, 184, 213);
 
 // Mixins
 
 @mixin shadow() {
-  box-shadow: rgb(196, 121, 243) 0px 3px 8px;
+  box-shadow: rgb(199, 219, 223) 0px 3px 8px;
 }
 
 @mixin flex() {

@@ -75,7 +75,7 @@ export function Hikes() {
           {/* <img className="hero-img" src="./images/mountain.jpg" alt="Header" /> */}
         </div>
         <div className="test">
-          <button className="button" onClick={button}>
+          <button className="button-6" onClick={button}>
             {showHikes ? 'Hide Hikes' : 'Show Hikes'}
           </button>
           {showHikes &&

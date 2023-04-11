@@ -1,0 +1,99 @@
+.hikes-component {
+  background-color: #c6e7f2;
+}
+
+// .add {
+//   background-color: white;
+//   @include form-flex;
+//   @include round-corners;
+//   margin: 50px;
+//   margin-top: 20px;
+//   padding-bottom: 20px;
+
+//   button {
+//     @include button
+//   }
+
+//   .text-item{
+//     @include text-flex
+//   }
+// }
+
+  .button {
+    @include button;
+  }
+
+  .hike-section {
+    background-color: white;
+    color: $text-color;
+    margin: 10px;
+    padding: 20px;
+    @include round-corners;
+    @include shadow;
+    flex-basis: 30%;
+  }
+
+
+  .app-container{
+    margin-top: 65px;
+  }
+
+  /* CSS */
+  .button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+.button-6 {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: $text-color;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+  margin: 0 auto;
+  width: 200px;
+  display: flex;
+
+}
+
+// .button-6:hover,
+// .button-6:focus {
+//   border-color: rgba(0, 0, 0, 0.15);
+//   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+//   color: #c6e7f2;
+// }
+
+.button-6:hover {
+  transform: translateY(-1px);
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: #c6e7f2;
+}
+
+// .button-6:active {
+//   background-color: #F0F0F1;
+//   border-color: rgba(0, 0, 0, 0.15);
+//   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+//   color: #c6e7f2;
+//   transform: translateY(0);
+// }
