@@ -48,7 +48,7 @@ export function Hikes() {
         {/* <Container maxWidth="sm"> */}
         {/* <div className="movie"> */}
         <div className="hero">
-          <img className="hero-img" src="./images/mountain.jpg" alt="Header" />
+          {/* <img className="hero-img" src="./images/mountain.jpg" alt="Header" /> */}
         </div>
         <div className="test">
           <button className="button" onClick={button}>

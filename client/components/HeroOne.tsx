@@ -36,7 +36,6 @@ export default function ParallaxHero() {
               pain.
             </p>
             <hr />
-            <h3>Cicero</h3>
             <p>
               Nor again is there anyone who loves or pursues or desires to
               obtain pain of itself, because it is pain, but because
