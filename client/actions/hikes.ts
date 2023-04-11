@@ -81,6 +81,7 @@ export function thunkAddHike(hike: HikesInterface): ThunkAction {
   return (dispatch) => {
     return addNewHike(hike)
       .then((hike) => {
+        console.log('testing101', hike)
         dispatch(addHike(hike))
       })
       .catch((err) => {

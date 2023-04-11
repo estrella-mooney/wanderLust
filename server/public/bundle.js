@@ -4519,6 +4519,7 @@ function fetchHikes() {
 function thunkAddHike(hike) {
   return dispatch => {
     return (0,_apis_apiClient__WEBPACK_IMPORTED_MODULE_0__.addNewHike)(hike).then(hike => {
+      console.log('testing101', hike);
       dispatch(addHike(hike));
     }).catch(err => {
       console.log('Thunk add hike', err.message);
@@ -4624,6 +4625,7 @@ function AddHikeForm() {
   const handleSubmit = event => {
     event.preventDefault();
     dispatch((0,_actions_hikes__WEBPACK_IMPORTED_MODULE_2__.thunkAddHike)(userHike));
+
     // setUserHike({ name: '', location: '' } as HikesInterface)
   };
 
@@ -4664,18 +4666,7 @@ function AddHikeForm() {
             value: userHike.location || '',
             onChange: handleChange,
             required: true
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-            htmlFor: "location",
-            children: "Add image: "
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-            name: "image",
-            id: "image",
-            type: "file"
-            // value={userHike.location || ''}
-            ,
-            onChange: handleChange,
-            required: true
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
             className: "hikes_button",
             type: "submit",
             children: "Sumbit your hike"
@@ -4766,20 +4757,20 @@ function ParallaxHero() {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
           className: "columns",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-            children: "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain."
+            children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate interdum erat, sit amet finibus ex egestas vitae. Vestibulum luctus convallis augue sit amet fermentum. Etiam facilisis consequat odio, non hendrerit metus consectetur in. In eget porttitor diam. Ut elit nisl, gravida vitae imperdiet id, molestie consectetur nisi. Cras at sapien egestas, hendrerit neque auctor, tempor enim. In tristique tincidunt pharetra. Suspendisse at suscipit urna. In nec dolor id lorem lobortis placerat in eget justo."
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-            children: "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain."
+            children: "Suspendisse dictum quam blandit nisl fringilla, sed accumsan nulla venenatis. Aliquam faucibus aliquet massa in finibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean semper, dolor non euismod ultricies, odio nulla feugiat nisl, ac mollis lorem nisl eget erat. Suspendisse rutrum odio non orci egestas, non interdum massa bibendum. Praesent efficitur velit quis purus luctus feugiat. Nullam volutpat pulvinar enim."
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-            children: "Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure."
+            children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate interdum erat, sit amet finibus ex egestas vitae. Vestibulum luctus convallis augue sit amet fermentum. Etiam facilisis consequat odio, non hendrerit metus consectetur in. In eget porttitor diam. Ut elit nisl, gravida vitae imperdiet id, molestie consectetur nisi. Cras at sapien egestas, hendrerit neque auctor, tempor enim. In tristique tincidunt pharetra. Suspendisse at suscipit urna. In nec dolor id lorem lobortis placerat in eget justo."
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-            children: "To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+            children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate interdum erat, sit amet finibus ex egestas vitae. Vestibulum luctus convallis augue sit amet fermentum. Etiam facilisis consequat odio, non hendrerit metus consectetur in. In eget porttitor diam. Ut elit nisl, gravida vitae imperdiet id, molestie consectetur nisi. Cras at sapien egestas, hendrerit neque auctor, tempor enim. In tristique tincidunt pharetra. Suspendisse at suscipit urna. In nec dolor id lorem lobortis placerat in eget justo."
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
             src: "./images/mountain.jpg",
             alt: "hero"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-            children: "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain."
+            children: "Suspendisse dictum quam blandit nisl fringilla, sed accumsan nulla venenatis. Aliquam faucibus aliquet massa in finibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean semper, dolor non euismod ultricies, odio nulla feugiat nisl, ac mollis lorem nisl eget erat. Suspendisse rutrum odio non orci egestas, non interdum massa bibendum. Praesent efficitur velit quis purus luctus feugiat. Nullam volutpat pulvinar enim."
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-            children: "These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to"
+            children: "Suspendisse dictum quam blandit nisl fringilla, sed accumsan nulla venenatis. Aliquam faucibus aliquet massa in finibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean semper, dolor non euismod ultricies, odio nulla feugiat nisl, ac mollis lorem nisl eget erat. Suspendisse rutrum odio non orci egestas, non interdum massa bibendum. Praesent efficitur velit quis purus luctus feugiat. Nullam volutpat pulvinar enim."
           })]
         })]
       })
@@ -4817,22 +4808,35 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Hikes() {
-  const [hikes, setHikes] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  // const [hikes, setHikes] = useState(null as HikesInterface[] | null)
   const [showHikes, setShowHikes] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const dispatch = (0,_hooks_redux__WEBPACK_IMPORTED_MODULE_2__.useAppDispatch)();
-  const data = (0,_hooks_redux__WEBPACK_IMPORTED_MODULE_2__.useAppSelector)(globalState => globalState.hikes);
+  const data = (0,_hooks_redux__WEBPACK_IMPORTED_MODULE_2__.useAppSelector)(globalState => globalState.subhikes);
+
+  // useEffect(() => {
+  //   // Make a varible for being able to use the useAppSelector from the store
+  //   // dispatch(
+  //   //   fetchHikes()
+  //   //   // Make button
+  //   // )
+  //   //   getAllHikes() //Set local State
+  //   //     .then((hikesArr) => {
+  //   //       setHikes(hikesArr)
+  //   //     })
+  //   //     .catch((err) => console.log(err.message))
+  // }, [])
+
+  // useEffect(() => {
+  //   getAllHikes()
+  //     .then((hikesArr) => {
+  //       setHikes(hikesArr)
+  //     })
+  //     .catch((err) => console.log(err.message))
+  // }, [])
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    // Make a varible for being able to use the useAppSelector from the store
-    // dispatch(
-    //   fetchHikes()
-    //   // Make button
-    // )
-    //   getAllHikes() //Set local State
-    //     .then((hikesArr) => {
-    //       setHikes(hikesArr)
-    //     })
-    //     .catch((err) => console.log(err.message))
-  }, []);
+    dispatch((0,_actions_hikes__WEBPACK_IMPORTED_MODULE_1__.fetchHikes)());
+  }, [dispatch]);
   const button = () => {
     setShowHikes(!showHikes);
     if (!showHikes) {
@@ -4842,6 +4846,14 @@ function Hikes() {
   const handleDelete = id => {
     dispatch((0,_actions_hikes__WEBPACK_IMPORTED_MODULE_1__.thunkDelHike)(id)); //dispatch the thunkDelHike function with the hike id to delete the hike
   };
+
+  // const handleUpdate = (id: number): void => {
+  //   // dispatch the thunkUpdateHike function with the hike id to update the hike
+  //   const hikeToUpdate = hikes?.find((hike) => hike.id === id)
+  //   if (hikeToUpdate) {
+  //     dispatch(thunkUpdateHike(hikeToUpdate))
+  //   }
+  // }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
@@ -4854,14 +4866,14 @@ function Hikes() {
           className: "button",
           onClick: button,
           children: showHikes ? 'Hide Hikes' : 'Show Hikes'
-        }), showHikes && data && data?.map(hike => {
+        }), showHikes && data.map(hike => {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             className: "hike-section",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
               children: hike.name
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
               children: hike.location
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+            }), !(hike.id === 1 || hike.id === 2) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
               className: "button",
               onClick: () => handleDelete(hike.id),
               children: "Delete Hike"
@@ -4969,6 +4981,7 @@ function subhikes() {
     case _actions_hikes__WEBPACK_IMPORTED_MODULE_0__.UPDATE_HIKE:
       return state.map(hike => hike.id === payload.id ? payload : hike);
     case _actions_hikes__WEBPACK_IMPORTED_MODULE_0__.ADD_HIKE:
+      console.log(payload);
       return [...state, payload];
     case _actions_hikes__WEBPACK_IMPORTED_MODULE_0__.DEL_HIKE:
       return state.filter(hike => hike.id !== payload);
@@ -4999,7 +5012,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,redux__WEBPACK_IMPORTED_MODULE_1__.combineReducers)({
   // stuff
-  hikes: _hikes__WEBPACK_IMPORTED_MODULE_0__["default"] //This matches with the hikes in the GloablState (stroe) when using the useAppSelector
+  subhikes: _hikes__WEBPACK_IMPORTED_MODULE_0__["default"] //This matches with the hikes in the GloablState (stroe) when using the useAppSelector
 }));
 
 /***/ }),

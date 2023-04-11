@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { useAppDispatch } from '../hooks/redux'
-import { addHike, thunkAddHike } from '../actions/hikes'
+import { addHike, thunkAddHike, fetchHikes } from '../actions/hikes'
 import { HikesInterface } from '../../common/Hikes'
 import { useNavigate } from 'react-router-dom'
 
@@ -17,6 +17,7 @@ function AddHikeForm() {
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
     dispatch(thunkAddHike(userHike))
+
     // setUserHike({ name: '', location: '' } as HikesInterface)
   }
 
@@ -56,7 +57,7 @@ function AddHikeForm() {
               required
             />
             <br></br>
-            <label htmlFor="location">Add image: </label>
+            {/* <label htmlFor="location">Add image: </label>
             <input
               name="image"
               id="image"
@@ -64,7 +65,7 @@ function AddHikeForm() {
               // value={userHike.location || ''}
               onChange={handleChange}
               required
-            />
+            /> */}
             <button className="hikes_button" type="submit">
               Sumbit your hike
             </button>

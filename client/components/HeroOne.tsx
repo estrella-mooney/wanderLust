@@ -17,55 +17,73 @@ export default function ParallaxHero() {
           <h2>Welcome to Hiking 101</h2>
           <div className="columns">
             <p>
-              On the other hand, we denounce with righteous indignation and
-              dislike men who are so beguiled and demoralized by the charms of
-              pleasure of the moment, so blinded by desire, that they cannot
-              foresee the pain and trouble that are bound to ensue; and equal
-              blame belongs to those who fail in their duty through weakness of
-              will, which is the same as saying through shrinking from toil and
-              pain.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+              vulputate interdum erat, sit amet finibus ex egestas vitae.
+              Vestibulum luctus convallis augue sit amet fermentum. Etiam
+              facilisis consequat odio, non hendrerit metus consectetur in. In
+              eget porttitor diam. Ut elit nisl, gravida vitae imperdiet id,
+              molestie consectetur nisi. Cras at sapien egestas, hendrerit neque
+              auctor, tempor enim. In tristique tincidunt pharetra. Suspendisse
+              at suscipit urna. In nec dolor id lorem lobortis placerat in eget
+              justo.
             </p>
 
             <p>
-              On the other hand, we denounce with righteous indignation and
-              dislike men who are so beguiled and demoralized by the charms of
-              pleasure of the moment, so blinded by desire, that they cannot
-              foresee the pain and trouble that are bound to ensue; and equal
-              blame belongs to those who fail in their duty through weakness of
-              will, which is the same as saying through shrinking from toil and
-              pain.
+              Suspendisse dictum quam blandit nisl fringilla, sed accumsan nulla
+              venenatis. Aliquam faucibus aliquet massa in finibus. Pellentesque
+              habitant morbi tristique senectus et netus et malesuada fames ac
+              turpis egestas. Aenean semper, dolor non euismod ultricies, odio
+              nulla feugiat nisl, ac mollis lorem nisl eget erat. Suspendisse
+              rutrum odio non orci egestas, non interdum massa bibendum.
+              Praesent efficitur velit quis purus luctus feugiat. Nullam
+              volutpat pulvinar enim.
             </p>
             <hr />
             <p>
-              Nor again is there anyone who loves or pursues or desires to
-              obtain pain of itself, because it is pain, but because
-              occasionally circumstances occur in which toil and pain can
-              procure him some great pleasure.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+              vulputate interdum erat, sit amet finibus ex egestas vitae.
+              Vestibulum luctus convallis augue sit amet fermentum. Etiam
+              facilisis consequat odio, non hendrerit metus consectetur in. In
+              eget porttitor diam. Ut elit nisl, gravida vitae imperdiet id,
+              molestie consectetur nisi. Cras at sapien egestas, hendrerit neque
+              auctor, tempor enim. In tristique tincidunt pharetra. Suspendisse
+              at suscipit urna. In nec dolor id lorem lobortis placerat in eget
+              justo.
             </p>
 
             <p>
-              To take a trivial example, which of us ever undertakes laborious
-              physical exercise, except to obtain some advantage from it? But
-              who has any right to find fault with a man who chooses to enjoy a
-              pleasure that has no annoying consequences, or one who avoids a
-              pain that produces no resultant pleasure?
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+              vulputate interdum erat, sit amet finibus ex egestas vitae.
+              Vestibulum luctus convallis augue sit amet fermentum. Etiam
+              facilisis consequat odio, non hendrerit metus consectetur in. In
+              eget porttitor diam. Ut elit nisl, gravida vitae imperdiet id,
+              molestie consectetur nisi. Cras at sapien egestas, hendrerit neque
+              auctor, tempor enim. In tristique tincidunt pharetra. Suspendisse
+              at suscipit urna. In nec dolor id lorem lobortis placerat in eget
+              justo.
             </p>
             <img src="./images/mountain.jpg" alt="hero" />
 
             <p>
-              On the other hand, we denounce with righteous indignation and
-              dislike men who are so beguiled and demoralized by the charms of
-              pleasure of the moment, so blinded by desire, that they cannot
-              foresee the pain and trouble that are bound to ensue; and equal
-              blame belongs to those who fail in their duty through weakness of
-              will, which is the same as saying through shrinking from toil and
-              pain.
+              Suspendisse dictum quam blandit nisl fringilla, sed accumsan nulla
+              venenatis. Aliquam faucibus aliquet massa in finibus. Pellentesque
+              habitant morbi tristique senectus et netus et malesuada fames ac
+              turpis egestas. Aenean semper, dolor non euismod ultricies, odio
+              nulla feugiat nisl, ac mollis lorem nisl eget erat. Suspendisse
+              rutrum odio non orci egestas, non interdum massa bibendum.
+              Praesent efficitur velit quis purus luctus feugiat. Nullam
+              volutpat pulvinar enim.
             </p>
 
             <p>
-              These cases are perfectly simple and easy to distinguish. In a
-              free hour, when our power of choice is untrammelled and when
-              nothing prevents our being able to
+              Suspendisse dictum quam blandit nisl fringilla, sed accumsan nulla
+              venenatis. Aliquam faucibus aliquet massa in finibus. Pellentesque
+              habitant morbi tristique senectus et netus et malesuada fames ac
+              turpis egestas. Aenean semper, dolor non euismod ultricies, odio
+              nulla feugiat nisl, ac mollis lorem nisl eget erat. Suspendisse
+              rutrum odio non orci egestas, non interdum massa bibendum.
+              Praesent efficitur velit quis purus luctus feugiat. Nullam
+              volutpat pulvinar enim.
             </p>
           </div>
         </div>

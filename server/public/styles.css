@@ -6,7 +6,7 @@ form {
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
-  background-color: #c6e7f2;
+  background-color: white;
   padding: 20px;
   border-radius: 10px;
   margin: 20px;
@@ -14,7 +14,7 @@ form {
 form h1 {
   font-size: 2rem;
   margin-bottom: 30px;
-  color: #a75dca;
+  color: #92c3d3;
 }
 form label {
   font-size: 1.2rem;
@@ -34,7 +34,7 @@ form input:focus {
   border-color: #6bcbef;
 }
 form .hikes_button {
-  background-color: #a75dca;
+  background-color: #92c3d3;
   color: white;
   font-size: 1.2rem;
   padding: 8px 16px;
@@ -63,7 +63,15 @@ body {
   left: 0;
   margin: 0;
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.test {
+  background-color: hotpink;
+}
+
+.formContainer {
   background-color: #c6e7f2;
+  padding-bottom: 100px;
 }
 
 full-body {
@@ -75,14 +83,8 @@ full-body {
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.hero-img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.hero {
-  position: fixed;
+.hikes-component {
+  background-color: #c6e7f2;
 }
 
 .add {
@@ -133,7 +135,7 @@ full-body {
 }
 
 .hike-section {
-  background-color: #c6e7f2;
+  background-color: #92c3d3;
   color: rgb(184, 43, 245);
   margin: 10px;
   padding: 20px;

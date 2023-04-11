@@ -15,13 +15,14 @@ export function getIndivudualHike(
 export function createHike(
   newHikes: HikesInterface,
   db = connection
-): Promise<HikesInterface[]> {
+): Promise<HikesInterface> {
   return db('hikes')
     .insert({
       name: newHikes.name,
       location: newHikes.location,
     })
     .returning(['id', 'name', 'location'])
+    .then((data) => data[0])
 }
 
 export function updateHike(
