@@ -4,6 +4,25 @@ export default function ParallaxHero() {
   return (
     <div className="page">
       <section className="hero-image">
+        <div className="container">
+          <h1>SVG Animated Birds</h1>
+
+          <div className="bird-container bird-container--one">
+            <div className="bird bird--one"></div>
+          </div>
+
+          <div className="bird-container bird-container--two">
+            <div className="bird bird--two"></div>
+          </div>
+
+          <div className="bird-container bird-container--three">
+            <div className="bird bird--three"></div>
+          </div>
+
+          <div className="bird-container bird-container--four">
+            <div className="bird bird--four"></div>
+          </div>
+        </div>
         <img src="./images/mountain.jpg" alt="Header" />
       </section>
       <div className="hero-text-container">

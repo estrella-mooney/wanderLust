@@ -3,11 +3,13 @@ import { Container } from '@mui/material'
 import Hikes from './Hikes'
 import Nav from './Nav'
 import ParallaxHero from './HeroOne'
+import Birds from './Birds'
 
 function App() {
   return (
     <>
       <ParallaxHero />
+      {/* <ParallaxHero /> */}
       {/* <header className="header-text"> */}
       {/* <Container maxWidth="sm"> */}
       <Nav />
