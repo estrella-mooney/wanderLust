@@ -4,6 +4,7 @@ import Hikes from './Hikes'
 import Nav from './Nav'
 import ParallaxHero from './HeroOne'
 import Birds from './Birds'
+import Navbar from './Navbar'
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       {/* <ParallaxHero /> */}
       {/* <header className="header-text"> */}
       {/* <Container maxWidth="sm"> */}
-      <Nav />
+      {/* <Nav /> */}
+      <Navbar />
       {/* </header> */}
       <div className="movie-container">
         <Hikes />
