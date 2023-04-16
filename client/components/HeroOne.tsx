@@ -31,7 +31,7 @@ export default function ParallaxHero() {
       <section className="main">
         <div className="article">
           {/* article wrapper */}
-          <h2>Welcome to Hiking 101</h2>
+          <h2>Welcome to Wanderlust</h2>
           <div className="columns">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
