@@ -4,12 +4,15 @@ import Hikes from './Hikes'
 import Nav from './Nav'
 import ParallaxHero from './HeroOne'
 import Birds from './Birds'
-import Navbar from './Navbar'
+// import Navbar from './Navbar'
+import Navbar from './navScroll'
+import About from './About'
 
 function App() {
   return (
     <>
       <ParallaxHero />
+      <About />
       {/* <ParallaxHero /> */}
       {/* <header className="header-text"> */}
       {/* <Container maxWidth="sm"> */}
