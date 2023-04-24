@@ -1,18 +1,6 @@
 import { useState, useEffect } from 'react'
-import { HikesInterface } from '../../common/Hikes'
-import { getAllHikes } from '../apis/apiClient'
-import {
-  fetchHikes,
-  thunkDelHike,
-  thunkUpdateHike,
-  thunkAddHike,
-} from '../actions/hikes'
+import { fetchHikes, thunkDelHike } from '../actions/hikes'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
-import { Container, ThemeProvider } from '@mui/material'
-import { Link } from 'react-router-dom'
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
-
-// import '@react-spring/parallax/dist/styles.css'
 
 import AddHikeForm from './AddHikeForm'
 
